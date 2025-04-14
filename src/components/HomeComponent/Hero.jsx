@@ -8,11 +8,11 @@ const Hero = () => {
   return (
     <> 
       <section
-        className="h-screen bg-cover bg-center relative bg-no-repeat px-4 sm:px-10 hero-section pl-4 sm:pl-8 md:pl-16 lg:pl-80"
+        className="h-screen bg-cover bg-center relative bg-no-repeat px-4 sm:px-10 pl-4 sm:pl-8 md:pl-16 hero-section"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         {/* <TopLeftOverlay /> */}
-        <div className="relative pt-40 md:pt-60 flex flex-col justify-center items-start sm:px-0 text-white w-full lg:w-[60%] z-10">
+        <div className="relative pt-40 md:pt-60 text-content flex flex-col justify-center items-start sm:px-0 text-white w-full z-10">
           {/* typography start for hero section */}
           <motion.h5
             initial={{ opacity: 0, y: 40 }}

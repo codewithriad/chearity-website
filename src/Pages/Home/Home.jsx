@@ -1,10 +1,11 @@
 import Hero from "../../components/HomeComponent/Hero";
+import About from "../About/About";
 const Home = () => {
   return (
     <>
       <main>
         <Hero/>
-        {/* <About/> */}
+        <About/>
          
         {/* <WhatWeDo />
         <OurCouses />

@@ -42,3 +42,14 @@ body {
 }
 
 /* Your custom styles below */
+@media (min-width: 1920px) {
+  .text-content {
+    padding-left: 20rem !important;
+    width: 57% !important;
+  }
+  .about-section {
+    width: 80% !important;
+    margin: 0 auto !important;
+    padding: 0 10rem !important;
+  }
+}
