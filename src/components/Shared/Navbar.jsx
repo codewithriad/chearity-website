@@ -2,6 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 
 const Navbar = () => {
@@ -61,7 +62,9 @@ const Navbar = () => {
         <nav className="flex justify-between items-center px-4 lg:px-[18rem] mx-auto py-5">
           {/* div for logo */}
           <div className="pl-2 md:pl-4 lg:pl-10">
-            <img src={logo} alg="logo" className="w-28 lg:w-32" />
+            <Link to="/">
+              <img src={logo} alg="logo" className="w-28 lg:w-32" />
+            </Link>
           </div>
 
           {/* nav links for desktop */}

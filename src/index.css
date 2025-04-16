@@ -13,6 +13,7 @@
 body {
   font-family: "Onest", sans-serif;
   font-optical-sizing: auto;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -35,10 +36,6 @@ html {
     ),
     linear-gradient(360deg, rgba(2, 13, 25, 0) 87.52%, #020d19 101.14%);
   z-index: 0;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
 }
 
 /* Your custom styles below */
