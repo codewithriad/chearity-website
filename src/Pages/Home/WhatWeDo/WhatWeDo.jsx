@@ -108,7 +108,7 @@ const WhatWeDo = () => {
               </h3>
               <p className="text-sm lg:text-base text-gray-600 mb-2 max-w-full lg:max-w-[55%]">
                 Providing access to clean water and sanitation facilities to
-                improve health and quality of life in underserved communities.
+                improve health and quality of life in undeserved communities.
               </p>
               <Link to="/">
                 <button className="flex items-center gap-2 text-orange-500 hover:text-orange-600 transition-colors duration-300">
