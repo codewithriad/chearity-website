@@ -63,7 +63,7 @@ export const Card = ({ title, text, image, index }) => {
         <Link to="/services">
           <motion.button 
             variants={textVariants}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: .8 }}
             className="mt-4 mx-auto px-4 py-2 flex items-center justify-center gap-2 text-orange-500 rounded-md hover:text-zinc-950 transition-all duration-300 group/btn"
           >
             Learn More
