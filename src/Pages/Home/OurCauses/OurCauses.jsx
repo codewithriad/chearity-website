@@ -10,7 +10,7 @@ const OurCauses = () => {
   return (
     <>
       <section
-      className="mt-[25rem] md:mt-[20rem] lg:mt-[8rem] bg-no-repeat bg-cover"
+      className="mt-0 lg:mt-[8rem] bg-no-repeat bg-cover"
         
         style={{
           backgroundImage: `url(${bgImage})`,
