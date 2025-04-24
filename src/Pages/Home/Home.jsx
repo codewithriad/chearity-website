@@ -3,6 +3,7 @@ import About from "./About/About";
 import OurCauses from "./OurCauses/OurCauses";
 import { Services } from "./Services/Services";
 import WhatWeDo from "./WhatWeDo/WhatWeDo";
+import { WhyChooseUs } from "./WhyChooseUs/WhyChooseUs";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
         <Services/>
         <WhatWeDo/>
         <OurCauses/>
+        <WhyChooseUs/>
       
 
          
