@@ -5,7 +5,7 @@ import image2 from "../../../assets/WhyChooseUs/why-choose-img-2.jpg";
 
 export const WhyChooseUs = () => {
   return (
-    <section className="mt-8 mx-8 lg:mx-96">
+    <section className="m-8 py-20 lg:mx-96">
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full">
         
         {/* left side image div */}
