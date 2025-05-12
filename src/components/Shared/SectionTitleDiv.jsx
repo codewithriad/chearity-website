@@ -15,7 +15,7 @@ export const SectionTitleDiv = ({ subTitle, title, text }) => {
       <h2 className="text-center text-3xl lg:text-5xl font-bold my-4">{title}</h2>
 
       {/* text of heading */}
-      <p className="text-center text-sm md:text-base text-gray-500 font-medium lg:text-lg mx-auto leading-8 mb-10 max-w-full lg:max-w-[65%]">
+      <p className="text-center text-sm md:text-base text-gray-500 font-medium mx-auto leading-8 mb-10 max-w-full lg:max-w-[65%]">
         {text}
       </p>
     </div>

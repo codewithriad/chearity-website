@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ErrorPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex justify-center items-center h-screen overflow-hidden relative">
@@ -13,7 +14,7 @@ const ErrorPage = () => {
           </h2>
 
           <div className="flex justify-center items-center gap-4 mt-4">
-            <Link to="/">
+            <Link onClick={()=> navigate(-1)}>
               <button className="text-white bg-orange-500 px-6 py-3 rounded-2xl">
                 Go Back
               </button>

@@ -33,6 +33,7 @@ const itemVariants = {
 const WhatWeDo = () => {
   return (
     <motion.section
+      id="what we do"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -47,7 +48,10 @@ const WhatWeDo = () => {
         {/* left card section */}
         <div className="w-full lg:max-w-fit">
           {/* section title */}
-          <motion.div variants={itemVariants} className="max-w-2xl mx-auto text-center lg:mx-0 lg:text-left">
+          <motion.div
+            variants={itemVariants}
+            className="max-w-2xl mx-auto text-center lg:mx-0 lg:text-left"
+          >
             <h3 className="flex items-center gap-2 justify-center lg:justify-start">
               <img src={chiarityImage} alt="chiarityImage" />
               <span className="uppercase text-gray-500 [word-spacing:2px]">
@@ -130,7 +134,7 @@ const WhatWeDo = () => {
                 alt="house-shelter-icon"
                 className="w-20 h-auto"
               />
-               <div className="absolute bottom-0 w-4 md:w-7 h-4 md:h-7 bg-orange-500 rounded-full -z-10 left-[10px] md:left-6 translate-x-0 translate-y-0"></div>
+              <div className="absolute bottom-0 w-4 md:w-7 h-4 md:h-7 bg-orange-500 rounded-full -z-10 left-[10px] md:left-6 translate-x-0 translate-y-0"></div>
             </div>
 
             {/* div text */}

@@ -7,7 +7,7 @@ import { ourProgramDb } from "../../../db/OurProgramDb";
 
 export const OurProgram = () => {
   const DBdata = ourProgramDb;
-  console.log("data", DBdata);
+  
 
   return (
     <section

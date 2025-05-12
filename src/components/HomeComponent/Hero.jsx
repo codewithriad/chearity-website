@@ -1,14 +1,19 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import CharityLogo from "../../assets/chiarity.svg";
-import heroImage from "../../assets/hero.jpeg"; // Make sure to replace with your actual image path
+import heroImage from "../../assets/hero.jpeg";
+import VideoModal from "./VideoModal";
 const Hero = () => {
+  const [isPlay, setIsplay] = useState(false);
+
   return (
-    <> 
+    <>
       <section
-        className="h-screen bg-cover bg-center relative bg-no-repeat px-4 sm:px-10 pl-4 sm:pl-8 md:pl-16 hero-section"
+        id="home"
+        className="h-[102vh] bg-cover bg-center relative bg-no-repeat px-4 sm:px-10 pl-4 sm:pl-8 md:pl-16 hero-section -mt-[6rem]"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         {/* <TopLeftOverlay /> */}
@@ -36,7 +41,7 @@ const Hero = () => {
             </motion.h1>
           </div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
@@ -49,34 +54,44 @@ const Hero = () => {
 
           {/* button div */}
           <div className="flex gap-6 mt-16 font-bold text-base">
-            <motion.button 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            className="bg-orange-500 text-white px-6 py-4 rounded-full flex items-center gap-2 cursor-pointer">
-              <span>Donate Now</span>
+            <motion.button
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2, ease: "easeOut" }}
+              className="bg-orange-500 text-white px-6 py-4 rounded-full flex items-center gap-2 cursor-pointer"
+            >
+              <Link to={'/donate'}>Donate Now</Link>
               <span>
                 <FaArrowRight />
               </span>
             </motion.button>
-            <motion.button 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            className="flex items-center gap-2 cursor-pointer">
+
+            {/* video button */}
+
+            <motion.button
+              onClick={() => setIsplay(!isPlay)}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2, ease: "easeOut" }}
+              className="flex items-center gap-2 cursor-pointer"
+            >
               <span>Play Video</span>
               <span className="bg-orange-500 text-xl text-white rounded-full p-4">
                 <FaPlay />
               </span>
             </motion.button>
+
+            {/* Use the VideoModal and pass props */}
+            <VideoModal isPlay={isPlay} setIsplay={setIsplay} />
           </div>
 
           {/* div for target */}
-          <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 2.5, ease: "easeOut" }}
-           className="flex items-center gap-4 mt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
+            className="flex items-center gap-4 mt-16"
+          >
             {/* left div */}
             <div className="border-r-[#ffffff1a] border-r pr-5 space-y-3">
               <p className="flex items-center gap-2">

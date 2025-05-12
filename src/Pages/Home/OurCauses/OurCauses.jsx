@@ -9,8 +9,7 @@ import { SectionTitleDiv } from "../../../components/Shared/SectionTitleDiv";
 const OurCauses = () => {
   return (
     <>
-      <section
-      className="mt-0 lg:mt-[8rem] bg-no-repeat bg-cover"
+      <section id="our causes" className="mt-0 lg:mt-[8rem] bg-no-repeat bg-cover"
         
         style={{
           backgroundImage: `url(${bgImage})`,

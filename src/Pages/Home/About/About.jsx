@@ -9,7 +9,7 @@ import helpFundImage from "../../../assets/help-fund.png";
 const About = () => {
   return (
     <>
-      <section className="mt-[22rem] md:mt-[15rem] mb-[4rem] lg:mb-[10rem] lg:mt-0 max-h-[80vh] w-full flex items-center justify-center pt-8 md:pt-12 lg:py-16">
+      <section id="about" className="mt-[22rem] md:mt-[15rem] mb-[4rem] lg:mb-[10rem] lg:mt-0 max-h-[80vh] w-full flex items-center justify-center pt-8 md:pt-12 lg:py-16">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-0 md:gap-12 lg:gap-16 w-full max-w-7xl mx-auto md:px-4">
           {/* left side image and donation icon */}
           <div className="w-full lg:w-1/2 flex justify-end sm:justify-center pr-4 md:pr-0">

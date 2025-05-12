@@ -1,14 +1,35 @@
 /* eslint-disable no-unused-vars */
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import logo from "../../assets/logo.svg";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = ["Home", "About", "Services", "Our Team", "Contact"];
+  const navLinks = [
+    "home",
+    "about",
+    "services",
+    "our team",
+    "what we do",
+    "our causes",
+    "contact",
+  ];
+
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    const scrollEffect = () => setIsScroll(window.scrollY > 50);
+
+    window.addEventListener("scroll", scrollEffect);
+
+    return () => window.removeEventListener("scroll", scrollEffect);
+  }, []);
 
   const menuVariants = {
     hidden: {
@@ -48,33 +69,55 @@ const Navbar = () => {
   };
 
   const linkVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
+    hidden: { opacity: 0, x: 20 },
+    visible: (i) => ({
       opacity: 1,
-      y: 0,
-      transition: { duration: 0.3 },
-    },
+      x: 0,
+      transition: { delay: i * 0.1 },
+    }),
   };
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-50 bg-[#0000003b]">
+      <header
+        className={`sticky top-0 left-0 w-full z-50 duration-200 ${
+          isScroll ? "bg-[#0000005e]" : "bg-transparent"
+        } `}
+      >
         <nav className="flex justify-between items-center px-4 lg:px-[18rem] mx-auto py-5">
           {/* div for logo */}
-          <div className="pl-2 md:pl-4 lg:pl-10">
-            <Link to="/">
+          <div className="pl-2 md:pl-4 lg:pl-10 cursor-pointer">
+            <ScrollLink to="home" smooth={true} offset={-70} duration={500}>
               <img src={logo} alg="logo" className="w-28 lg:w-32" />
-            </Link>
+            </ScrollLink>
           </div>
 
           {/* nav links for desktop */}
-          <ul className="hidden lg:flex gap-5 text-white">
+          <ul className="hidden lg:flex justify-end items-center gap-5 text-white">
             {navLinks.map((link, index) => (
-              <li key={index}>{link}</li>
+              <li key={index}>
+                <ScrollLink
+                  to={link}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className="text-lg hover:text-orange-500 duration-300 cursor-pointer capitalize"
+                >
+                  {link}
+                </ScrollLink>
+              </li>
             ))}
           </ul>
 
-          <button className="text-white hidden lg:block">SignUp</button>
+          <ScrollLink
+            to={"donate"}
+            smooth={true}
+            offset={-100}
+            duration={500}
+            className="hidden lg:block text-white text-lg hover:text-orange-500 duration-200"
+          >
+            <button>Donate Us</button>
+          </ScrollLink>
 
           {/* mobile menu toggle button */}
 
@@ -106,10 +149,19 @@ const Navbar = () => {
                     <motion.li
                       key={i}
                       variants={linkVariants}
-                      onClick={() => setIsOpen(false)}
                       className="cursor-pointer"
                     >
-                      {link}
+                      <ScrollLink
+                        to={link.toLowerCase()}
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}
+                        onClick={() => setIsOpen(false)}
+                        className="text-lg lg:hover:text-orange-500 duration-300 cursor-pointer uppercase"
+                      >
+                        {link}
+                      </ScrollLink>
                     </motion.li>
                   ))}
                 </ul>

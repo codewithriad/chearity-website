@@ -32,6 +32,7 @@ export const Services = () => {
   return (
     <>
       <motion.section
+        id="services"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
